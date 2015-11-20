@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
+    <!-- esta es la parte hql(lenguaje orientado a objetos) a sql nativo-->
+    <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
+    <!-- interfaç son metodos no tiene código-->
+    <property name="hibernate.connection.url">jdbc:derby://localhost:1527/sample</property>
+    <!-- -->
+    <property name="hibernate.connection.username">app</property><!-- la sesión se crea refiriendonos a este archivo-->
+    <property name="hibernate.connection.password">app</property>
+    <mapping resource="pojo/ProductCode.hbm.xml"/>
+    <mapping resource="pojo/PurchaseOrder.hbm.xml"/>
+    <mapping resource="pojo/DiscountCode.hbm.xml"/>
+    <mapping resource="pojo/Customer.hbm.xml"/>
+    <mapping resource="pojo/MicroMarket.hbm.xml"/>
+    <mapping resource="pojo/Manufacturer.hbm.xml"/>
+    <mapping resource="pojo/Product.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>
